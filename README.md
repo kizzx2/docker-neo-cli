@@ -13,8 +13,7 @@ docker run --rm -it -p 10332:10332 -v $PWD/Chain:/neo-cli/Chain kizzx2/neo-cli
 Start syncing with RPC on testnet:
 
 ```bash
-docker run --rm -it -v $PWD/Chain:/neo-cli/Chain -p 20332:20332 kizzx2/neo-cli \
-  bash -c 'cp config.testnet.json config.json && dotnet neo-cli /rpc'
+docker run --rm -it -p 20332:20332 -v $PWD/Chain:/neo-cli/Chain kizzx2/neo-cli:testnet
 ```
 
 Starting as a daemon:
@@ -25,4 +24,4 @@ docker run --name neo-cli -id --rm -p 10332:10332 kizzx2/neo-cli
 
 Starting as a daemon with `docker-compose`:
 
-Use the `docker-compose.yml`
+Use the `docker-compose.yml` in the repository.
